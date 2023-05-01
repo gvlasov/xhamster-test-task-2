@@ -1,11 +1,11 @@
-# xhamster-test-task
+# xhamster-test-task-2
 
 ### Running
 
 ```sh
 composer install
 docker-compose up -d --wait
-vendor/bin/phpunit tests
+vendor/bin/phpunit
 ```
 
 ### Usage
