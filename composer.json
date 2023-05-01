@@ -1,0 +1,19 @@
+{
+    "name": "gvlasov/xhamster-test-task-2",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Gvlasov\\XhamsterTestTask2\\": "src/"
+        }
+    },
+    "require": {
+        "ext-mysql": "*",
+        "ext-pdo": "*",
+        "nesbot/carbon": "^2.66",
+        "noahheck/e_pdostatement": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10",
+        "mockery/mockery": "^1.5"
+    }
+}
