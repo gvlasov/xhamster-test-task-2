@@ -3,12 +3,22 @@ services:
         image: mysql/mysql-server:8.0
         ports:
             - 3306:3306
+        env_file: .env
         environment:
             MYSQL_ROOT_PASSWORD: '1'
             MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: 'xhamster'
-            MYSQL_USER: 'xhamster'
-            MYSQL_PASSWORD: '1'
+            MYSQL_DATABASE: '${DB_NAME}'
+            MYSQL_USER: '${DB_USER}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_INITDB_SKIP_TZINFO: 1
         volumes:
             - './schema.sql:/docker-entrypoint-initdb.d/10-schema.sql'
+        healthcheck:
+            test:
+                - CMD
+                - mysqladmin
+                - ping
+                - '-p${DB_PASSWORD}'
+            retries: 50
+            timeout: 1s
