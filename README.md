@@ -1,5 +1,7 @@
 # xhamster-test-task-2
 
+PDO-based implementation of Xhamster test task
+
 ### Running
 
 ```sh
